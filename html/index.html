@@ -1,45 +1,47 @@
- <!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <title> Chat </title>
-    <meta name = "charset" charset = "utf-8">
-    <meta name = "viewport" content = "width=device-width">
-    <link rel = "stylesheet" type = "text/css" href = "style.css">
-    <script src = "script.js"></script>
-    <script src= "socket.io/socket.io.js"></script>
-<!-- Pixel Code - https://66analytics.com/demo/ -->
-<script defer src="https://66analytics.com/demo/pixel/2Ee7MinXOuIJbhFQ"></script>
-<!-- END Pixel Code -->
-  </head>
-  <body onload = "onload()">
-    <div id = "Main">
-      <audio id = "Ding" src = "Ding.mp3"> </audio>
-      <h1 id = "Title"> Chat </h1>
-      <div id = "AccessPort">
-        <label id = "NameLabel"> Username  </label>
-        <input id = "NameInput" type = "text">
-        <br><br>
-        <label id = "IDLabel"> Chatroom </label>
-        <input id = "IDInput" value = "Room1" type = "text">
-        <input id = "ConnectButton" class = "Button" type = "submit" value = "Connect" onclick = "Connect()">
-      </div>
-      <h2 id = "RoomID"> Chatroom : None </h2>
-      <div id = "Chat">
-        <p id = "Message0" class = "Message"> - </p>
-        <p id = "Message1" class = "Message"> - </p>
-        <p id = "Message2" class = "Message"> - </p>
-        <p id = "Message3" class = "Message"> - </p>
-        <p id = "Message4" class = "Message"> - </p>
-        <p id = "Message5" class = "Message"> - </p>
-        <p id = "Message6" class = "Message"> - </p>
-        <p id = "Message7" class = "Message"> - </p>
-        <p id = "Message8" class = "Message"> - </p>
-        <p id = "Message9" class = "Message"> - </p>
-        <label id = "MessageLabel"> Message </label>
-        <input id = "ComposedMessage" type = "text">
-        <input id = "SendMessage" onclick="Send()" value = "Send" class = "Button" type = "submit">
-      </div>
-      <br><br>
+<head>
+    <title>Chatpion : Chat Securely</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body onload="onload()">
+    <div id="Main">
+        <audio id="Ding" src="Ding.mp3"></audio>
+        <h1 id="Title">Chatpion</h1>
+        <div id="AccessPort">
+    <input id="NameInput" type="text" placeholder="Enter your username">
+    <div id="RoomInputGroup">
+        <input id="IDInput" value="Room1" type="text" placeholder="Enter chatroom name">
+        <button id="ConnectButton" onclick="Connect()">Join</button>
     </div>
-  </body>
+</div>
+        <h2 id="RoomID">Chatroom: None</h2>
+        <div id="Chat">
+            <div id="MessageContainer">
+                <p id="Message0" class="Message"></p>
+                <p id="Message1" class="Message"></p>
+                <p id="Message2" class="Message"></p>
+                <p id="Message3" class="Message"></p>
+                <p id="Message4" class="Message"></p>
+                <p id="Message5" class="Message"></p>
+                <p id="Message6" class="Message"></p>
+                <p id="Message7" class="Message"></p>
+                <p id="Message8" class="Message"></p>
+                <p id="Message9" class="Message"></p>
+            </div>
+        </div>
+        <div id="InputContainer">
+            
+            <input id="ComposedMessage" type="text" placeholder="   Type your message here">
+            <button id="SendMessage" onclick="Send()" class="icon-button" type="button">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</body>
 </html>
